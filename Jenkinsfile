@@ -15,5 +15,11 @@ node {
            sh 'echo Hello, World!'
         }
     }
+    stage('Push Docker Image') {
+          docker.withRegistry('https://registry.hub.docker.com', 'docker_hub_login') {
+                app.push("${env.BUILD_NUMBER}")
+                app.push("latest")
+         } 
+    }
 }    
     
