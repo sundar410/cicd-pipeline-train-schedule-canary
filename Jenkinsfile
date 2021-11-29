@@ -1,4 +1,8 @@
 node {
+    environment {
+        //be sure to replace "willbla" with your own Docker Hub username
+        DOCKER_IMAGE_NAME = "sundar41097/train-schedule"
+    }
     stage ('Preperation'){
         git credentialsId: '', url: 'https://github.com/sundar410/cicd-pipeline-train-schedule-canary.git'
 
