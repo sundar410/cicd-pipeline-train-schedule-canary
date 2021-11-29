@@ -10,9 +10,6 @@ node {
         archiveArtifacts artifacts: 'dist/trainSchedule.zip'
     }
     stage('Build Docker Image') {
-            when {
-                branch 'master'
-            }
         app = docker.build("sundar41097/train-schedule")
         app.inside {
            sh 'echo Hello, World!'
