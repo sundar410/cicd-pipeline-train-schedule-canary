@@ -5,7 +5,7 @@ node {
     }
     stage ('Build'){
         sh'pwd'
-        echo'Running Build Automation
+        echo'Running Build Automation'
         sh'./gradlew build --no-daemon'
         archiveArtifacts artifacts: 'dist/trainSchedule.zip'
     }
