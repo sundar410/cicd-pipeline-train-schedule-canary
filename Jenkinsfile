@@ -17,5 +17,6 @@ node {
         app.inside {
            sh 'echo Hello, World!'
         }
+    }
 }    
     
