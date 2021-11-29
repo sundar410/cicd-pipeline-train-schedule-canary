@@ -21,7 +21,7 @@ node {
                 app.push("latest")
          } 
     }
-    stage('CanaryDeploy') 
+    stage('CanaryDeploy') {
          environment { 
                 CANARY_REPLICAS = 1
          }
@@ -31,7 +31,7 @@ node {
                     enableConfigSubstitution: true
          )
            
-        }
+    }
     stage('DeployToProduction') {
         environment { 
                 CANARY_REPLICAS = 0
